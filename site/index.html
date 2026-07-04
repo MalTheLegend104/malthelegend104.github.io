@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MalTheLegend104 — systems &amp; low-level projects</title>
+	<meta name="description"
+		content="Hobby OS development, portable CLI shells, and framebuffer graphics libraries written in C.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+	<header class="hero">
+		<div class="terminal" role="img" aria-label="Terminal boot log introducing MalTheLegend104, systems programmer">
+			<div class="terminal-bar">
+				<span class="dot"></span><span class="dot"></span><span class="dot"></span>
+				<span class="terminal-title">startup.log</span>
+			</div>
+			<pre class="terminal-body" id="boot-log" aria-hidden="true"></pre>
+		</div>
+
+		<div class="hero-caption">
+			<h1>MalTheLegend104</h1>
+			<p class="tagline">Computer science student focused on systems programming, low-level programming, and C.
+			</p>
+			<nav class="hero-nav">
+				<a href="#projects">Projects</a>
+				<a href="#about">About</a>
+				<a href="https://github.com/MalTheLegend104" target="_blank" rel="noopener">GitHub ↗</a>
+			</nav>
+		</div>
+	</header>
+
+	<main>
+		<section id="projects" class="projects">
+			<h2><span class="prompt">$</span> ls ~/projects</h2>
+
+			<div class="card-grid">
+
+				<article class="card">
+					<div class="card-head">
+						<h3>WallOS</h3>
+						<span class="tag tag-active">ACTIVE</span>
+					</div>
+					<p class="card-desc">
+						A 64-bit hobby operating system written primarily in C99.
+						WallOS is my long-term learning project, built to explore operating system internals from the
+						ground up. It prioritizes readable, understandable code over optimization.
+					</p>
+					<ul class="meta-list">
+						<li>C99 / C++</li>
+						<li>x86_64</li>
+						<li>freestanding</li>
+					</ul>
+					<a class="card-link" href="https://github.com/MalTheLegend104/WallOS" target="_blank"
+						rel="noopener">view repo →</a>
+				</article>
+
+				<article class="card">
+					<div class="card-head">
+						<h3>WallShell</h3>
+						<span class="tag tag-stable">STABLE</span>
+					</div>
+					<p class="card-desc">
+						A lightweight, highly portable command-line framework written in C99. Designed to work
+						everywhere from embedded systems and hobby operating systems to desktop applications while
+						requiring only a minimal subset of the C standard library. Originally built for WallOS, it
+						eventually became useful enough to stand on its own.
+					</p>
+					<ul class="meta-list">
+						<li>C99</li>
+						<li>portable</li>
+						<li>(Mostly) freestanding</li>
+					</ul>
+					<a class="card-link" href="https://github.com/MalTheLegend104/WallShell" target="_blank"
+						rel="noopener">view repo →</a>
+				</article>
+
+				<article class="card">
+					<div class="card-head">
+						<h3>Apollo</h3>
+						<span class="tag tag-stable">STABLE</span>
+					</div>
+					<p class="card-desc">
+						A dependency-free framebuffer graphics library written in C99. Built for low-level graphics
+						programming, it includes pixel format conversion, primitive drawing, polygon filling, and bitmap
+						font rendering.
+					</p>
+					<ul class="meta-list">
+						<li>C99</li>
+						<li>framebuffer</li>
+						<li>no dependencies</li>
+					</ul>
+					<a class="card-link" href="https://github.com/MalTheLegend104/WallOS/tree/apollo/libs/apollo"
+						target="_blank" rel="noopener">view branch →</a>
+				</article>
+
+			</div>
+		</section>
+
+		<section id="about" class="about">
+			<h2><span class="prompt">$</span> cat about.md</h2>
+			<div class="about-body">
+				<p>
+					I'm a computer science student with a passion for low-level programming. Most of what I write is C,
+					C++, and x86_64 assembly, though I occasionally work in Java and Python. I enjoy understanding how
+					systems work from the ground up, which naturally led me into operating system development.
+				</p>
+				<p>
+					WallOS isn't my first attempt at an OS, but it's the first one I've stuck with long enough, and been
+					proud enough of, to show off publicly. Along the way I've broken pieces of it out into reusable
+					libraries like WallShell and Apollo whenever they proved useful beyond the OS itself.
+				</p>
+				<p>
+					These projects exist primarily as learning experiences. I work on them whenever something catches my
+					interest, favoring clean architecture and readable code over chasing maximum performance. At the
+					moment, that mostly means building out WallOS, where I'm currently spending a lot of time on a
+					(currently private) FAT filesystem driver.
+				</p>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<p><span class="prompt">$</span> echo $CONTACT</p>
+		<p><a href="https://github.com/MalTheLegend104" target="_blank" rel="noopener">github.com/MalTheLegend104</a>
+		</p>
+		<p class="footer-note">&copy; <span id="year"></span> MalTheLegend104</p>
+	</footer>
+
+	<script src="script.js"></script>
+</body>
+
+</html>

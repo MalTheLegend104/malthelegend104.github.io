@@ -1,0 +1,306 @@
+/* ---------------------------------------------------------
+   Tokens
+--------------------------------------------------------- */
+:root {
+	--bg: #0f1319;
+	--bg-raised: #161b23;
+	--bg-terminal: #0b0e13;
+	--border: #262c38;
+	--text: #e7e9ee;
+	--text-dim: #8891a1;
+	--accent: #ffb454;
+	/* phosphor amber */
+	--accent-2: #6ee7c8;
+	/* muted teal */
+
+	--font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+	--font-sans: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+	--max-width: 920px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	html {
+		scroll-behavior: auto;
+	}
+
+	* {
+		animation-duration: 0.001ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.001ms !important;
+	}
+}
+
+body {
+	margin: 0;
+	background: var(--bg);
+	color: var(--text);
+	font-family: var(--font-sans);
+	line-height: 1.65;
+}
+
+h1,
+h2,
+h3 {
+	font-family: var(--font-mono);
+	font-weight: 600;
+	margin: 0;
+}
+
+a {
+	color: var(--accent-2);
+	text-decoration: none;
+}
+
+a:hover,
+a:focus-visible {
+	text-decoration: underline;
+}
+
+:focus-visible {
+	outline: 2px solid var(--accent);
+	outline-offset: 3px;
+}
+
+.prompt {
+	color: var(--accent);
+}
+
+/* ---------------------------------------------------------
+   Hero / terminal
+--------------------------------------------------------- */
+.hero {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 4rem 1.5rem 2rem;
+}
+
+.terminal {
+	background: var(--bg-terminal);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	overflow: hidden;
+	box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.6);
+}
+
+.terminal-bar {
+	display: flex;
+	align-items: center;
+	gap: 0.4rem;
+	padding: 0.6rem 0.9rem;
+	background: var(--bg-raised);
+	border-bottom: 1px solid var(--border);
+}
+
+.dot {
+	width: 9px;
+	height: 9px;
+	border-radius: 50%;
+	background: var(--border);
+}
+
+.dot:nth-child(3) {
+	background: var(--accent);
+}
+
+.terminal-title {
+	margin-left: 0.6rem;
+	font-family: var(--font-mono);
+	font-size: 0.8rem;
+	color: var(--text-dim);
+}
+
+.terminal-body {
+	margin: 0;
+	padding: 1.25rem 1.4rem 1.5rem;
+	font-family: var(--font-mono);
+	font-size: 0.9rem;
+	color: var(--text);
+	min-height: 9.5em;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
+
+.hero-caption {
+	text-align: center;
+	padding-top: 2.25rem;
+}
+
+.hero-caption h1 {
+	font-size: clamp(1.8rem, 4vw, 2.4rem);
+	letter-spacing: -0.02em;
+}
+
+.tagline {
+	color: var(--text-dim);
+	margin: 0.6rem 0 0;
+	font-size: 1.05rem;
+}
+
+.hero-nav {
+	display: flex;
+	justify-content: center;
+	gap: 1.75rem;
+	margin-top: 1.5rem;
+	font-family: var(--font-mono);
+	font-size: 0.9rem;
+}
+
+/* ---------------------------------------------------------
+   Sections
+--------------------------------------------------------- */
+main {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 1rem 1.5rem 2rem;
+}
+
+section {
+	margin-top: 4rem;
+}
+
+section h2 {
+	font-size: 1.1rem;
+	font-weight: 500;
+	color: var(--text-dim);
+	margin-bottom: 1.75rem;
+}
+
+section h2 .prompt {
+	margin-right: 0.15em;
+}
+
+/* ---------------------------------------------------------
+   Project cards
+--------------------------------------------------------- */
+.card-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1.1rem;
+}
+
+@media (max-width: 800px) {
+	.card-grid {
+		grid-template-columns: 1fr;
+	}
+}
+
+.card {
+	background: var(--bg-raised);
+	border: 1px solid var(--border);
+	border-radius: 8px;
+	padding: 1.4rem;
+	display: flex;
+	flex-direction: column;
+	transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.card:hover {
+	border-color: var(--accent);
+	transform: translateY(-2px);
+}
+
+.card-head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 0.8rem;
+}
+
+.card-head h3 {
+	font-size: 1.05rem;
+}
+
+.tag {
+	font-family: var(--font-mono);
+	font-size: 0.68rem;
+	letter-spacing: 0.06em;
+	padding: 0.2rem 0.5rem;
+	border-radius: 4px;
+	border: 1px solid transparent;
+}
+
+.tag-active {
+	color: var(--accent);
+	border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+	background: color-mix(in srgb, var(--accent) 12%, transparent);
+}
+
+.tag-stable {
+	color: var(--accent-2);
+	border-color: color-mix(in srgb, var(--accent-2) 40%, transparent);
+	background: color-mix(in srgb, var(--accent-2) 12%, transparent);
+}
+
+.card-desc {
+	color: var(--text-dim);
+	font-size: 0.92rem;
+	flex-grow: 1;
+}
+
+.meta-list {
+	list-style: none;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	padding: 0;
+	margin: 0.9rem 0 1.1rem;
+	font-family: var(--font-mono);
+	font-size: 0.72rem;
+	color: var(--text-dim);
+}
+
+.meta-list li {
+	border: 1px solid var(--border);
+	border-radius: 4px;
+	padding: 0.15rem 0.5rem;
+}
+
+.card-link {
+	font-family: var(--font-mono);
+	font-size: 0.88rem;
+	color: var(--accent);
+}
+
+/* ---------------------------------------------------------
+   About
+--------------------------------------------------------- */
+.about-body p {
+	color: var(--text);
+	max-width: 68ch;
+}
+
+.about-body p+p {
+	margin-top: 1rem;
+}
+
+/* ---------------------------------------------------------
+   Footer
+--------------------------------------------------------- */
+.site-footer {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 3rem 1.5rem 3.5rem;
+	border-top: 1px solid var(--border);
+	margin-top: 3rem;
+	font-family: var(--font-mono);
+	font-size: 0.88rem;
+	color: var(--text-dim);
+}
+
+.site-footer p {
+	margin: 0.3rem 0;
+}
+
+.footer-note {
+	margin-top: 1.25rem;
+	font-size: 0.78rem;
+}
